@@ -1,0 +1,14 @@
+*{
+  margin: 0px;
+  padding: 0px;
+ box-sizing: border-box;
+ font-family: "Bree Serif", serif;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+#homemain{
+  background-image: url(./assets/bgblur.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
