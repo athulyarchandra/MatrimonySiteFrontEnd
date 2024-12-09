@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Profiles from '../components/Profiles'
 import { Link } from 'react-router-dom'
@@ -10,12 +10,37 @@ import storyimg1 from '../assets/storyimg1.png'
 import storyimg2 from '../assets/storyimg2.png'
 import storyimg3 from '../assets/storyimg3.png'
 import storyimg4 from '../assets/storyimg4.png'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { getHomeProfilesAPI } from '../services/allAPI'
+
 
 
 
 
 
 const Home = () => {
+  const [allHomeProfiles, setAllHomeProfiles] = useState([])
+  useEffect(() => {
+    getAllHomeProfiles()
+  }, [])
+  const getAllHomeProfiles = async () => {
+    try {
+      const result = await getHomeProfilesAPI()
+      if (result.status == 200) {
+        setAllHomeProfiles(result.data)
+      } else {
+
+      }
+    } catch (err) {
+      console.log(err);
+
+    }
+  }
+
+  console.log(allHomeProfiles);
+
   return (
     <>
       <Header />
@@ -23,8 +48,13 @@ const Home = () => {
         <div>
           <img style={{ height: '150px' }} src={landingimg1} alt="" />
           <p className='fs-1'>CELEBRATE LOVE <br /> WITH EVERAFTER</p>
-          <Link to={'./login'}><p style={{ color: 'black', fontSize: '20px' }} className='btn border'>Register Now!! Find your perfect match</p> </Link>
-        </div>
+          {
+            sessionStorage.getItem("token") ?
+              <Link to={'/dashboard'}><p style={{ color: 'black', fontSize: '20px' }} className='btn border'>Explore!! Your future</p> </Link>
+              :
+              <Link to={'./login'}><p style={{ color: 'black', fontSize: '20px' }} className='btn border'>Register Now!! Find your perfect match</p> </Link>
+
+          }</div>
         <div style={{ position: 'relative' }} className='d-flex flex-column align-items-center'>
           <img width={'600px'} src={couple1} alt="no image" />
           <img height={'300px'} style={{ marginRight: '500px', position: 'absolute', marginTop: '220px' }} className='' src={couple2} alt="no image" />
@@ -61,13 +91,21 @@ const Home = () => {
       </div>
       <div className='mt-5 text-center'>
         <h1>Explore Your Perfect Match</h1>
-        <marquee fade={true} pauseOnHover={true}>
-          <div className="d-flex">
-            <div className="me-5">
-              <Profiles />
-            </div>
-          </div>
-        </marquee>
+        <Container>
+          <Row>
+            <Col>
+              <div className="d-flex">
+                {
+                  allHomeProfiles?.map(profile => (
+                    <div className="me-5">
+                      <Profiles displayData={profile} />
+                    </div>
+                  ))
+                }
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
       <div style={{ width: '100%' }} className="d-flex flex-column justify-cotent-center align-items-centern mb-5">
         <h1 className='text-center'>LOVE STORY TIMELINE</h1>
@@ -79,20 +117,20 @@ const Home = () => {
             <img src={storyimg3} alt="no image" />
             <img src={storyimg4} alt="no image" />
           </div>
-          <div className='d-flex justify-content-center align-items-center ' style={{width:'100%'}}>
-            <div style={{width:'25%',}} className='m-2'>
-              <p className='p-1 border rounded' style={{borderColor:'brown'}}></p>
+          <div className='d-flex justify-content-center align-items-center ' style={{ width: '100%' }}>
+            <div style={{ width: '25%', }} className='m-2'>
+              <p className='p-1 border rounded' style={{ borderColor: 'brown' }}></p>
             </div>
-            <i className="fa-solid fa-gem pb-2 m-2 fs-4"  style={{color:'brown'}}></i>
-            <div style={{width:'25%',}} className='m-2'>
-              <p className='p-1 border rounded' style={{borderColor:'brown'}}></p>
+            <i className="fa-solid fa-gem pb-2 m-2 fs-4" style={{ color: 'brown' }}></i>
+            <div style={{ width: '25%', }} className='m-2'>
+              <p className='p-1 border rounded' style={{ borderColor: 'brown' }}></p>
             </div>
-            <div style={{width:'25%',}} className='m-2'>
-              <p className='p-1 border rounded' style={{borderColor:'brown'}}></p>
+            <div style={{ width: '25%', }} className='m-2'>
+              <p className='p-1 border rounded' style={{ borderColor: 'brown' }}></p>
             </div>
-            <i className="fa-solid fa-gem pb-2 m-2 fs-4"  style={{color:'brown'}}></i>
-            <div style={{width:'25%',}} className='m-2'>
-              <p className='p-1 border rounded' style={{borderColor:'brown'}}></p>
+            <i className="fa-solid fa-gem pb-2 m-2 fs-4" style={{ color: 'brown' }}></i>
+            <div style={{ width: '25%', }} className='m-2'>
+              <p className='p-1 border rounded' style={{ borderColor: 'brown' }}></p>
             </div>
           </div>
           <div className='d-flex justify-content-around align-items-center text-center'>
@@ -116,7 +154,7 @@ const Home = () => {
               <span style={{ color: 'brown' }}>A friend's party</span>
               <p >Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
             </div>
-            </div>
+          </div>
         </div>
       </div>
 

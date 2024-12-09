@@ -12,3 +12,75 @@
   background-size: cover;
 }
 
+/* Transparent Navbar for Home Page */
+.transparent-navbar {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border: none;
+}
+
+/* Solid Navbar for Other Pages */
+.solid-navbar {
+  background-color: white !important;
+  border: none;
+}
+#footer {
+  padding: 20px 15px;
+}
+
+#footer .intro {
+  width: 100%; /* Ensures the width adapts on smaller screens */
+}
+
+#footer h5, #footer h2, #footer p {
+  margin: 0 auto;
+}
+
+@media (max-width: 991.98px) {
+  #footer {
+    height: auto; /* Allows height to adjust dynamically */
+  }
+
+  #footer .row > div {
+    margin-bottom: 20px; /* Adds spacing between columns */
+  }
+
+  #footer .intro {
+    text-align: center; /* Center-align text for better presentation */
+  }
+
+  #footer .d-flex.justify-content-between {
+    flex-direction: column; /* Stacks content vertically */
+    align-items: center;
+  }
+
+  #footer .d-flex.justify-content-center {
+    flex-wrap: wrap; /* Wraps social media icons for better spacing */
+  }
+
+  #footer .d-flex.mx-1 {
+    flex-direction: column; /* Stacks email input and button */
+  }
+
+  #footer .d-flex.mx-1 input {
+    margin-bottom: 10px; /* Adds spacing for stacked elements */
+  }
+}
+
+@media (max-width: 576px) {
+  #footer h2 {
+    font-size: 1.5rem; /* Adjusts the font size for smaller screens */
+  }
+
+  #footer .d-flex.justify-content-center p {
+    font-size: 0.8rem; /* Scales down social media icon containers */
+    padding: 5px 8px;
+  }
+
+  #footer .d-flex.align-items-center {
+    flex-direction: column; /* Centers the CTA text and button */
+  }
+
+  #footer .btn {
+    margin-top: 10px; /* Adds spacing above the button */
+  }
+}

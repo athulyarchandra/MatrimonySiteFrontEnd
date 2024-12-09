@@ -1,2 +1,0 @@
-//register called by Auth
-//

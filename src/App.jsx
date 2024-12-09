@@ -8,8 +8,8 @@ import UserSettings from './pages/UserSettings'
 import Footer from './components/Footer'
 import './App.css'
 import Plans from './components/Plans'
-import UserProfileEdit from './components/UserProfileEdit'
 import UserProfile from './pages/UserProfile'
+import UserProfileEdit from './components/UserProfileEdit'
 import Pnf from './pages/Pnf'
 
 

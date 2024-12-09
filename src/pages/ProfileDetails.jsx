@@ -1,23 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import city from '../assets/city.png'
-import height from '../assets/auth.png'
+import height from '../assets/height.png'
 import job from '../assets/job.png'
 import age from '../assets/age.png'
 import othersProfile from '../assets/othersProfile.png'
+import { useLocation } from 'react-router-dom';
 
 
 const ProfileDetails = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3
-  };
+ 
   return (
     <>
       <Header />
@@ -29,18 +24,18 @@ const ProfileDetails = () => {
           <Col xs={6}>
             <div>
               <h1>Angelina Jolie</h1>
-              <p style={{ width: '200px' }} className='bg-success px-3 text-center rounded'>0 viewers</p>
+              <p style={{ width: '200px' }} className='bg-success px-3 text-center rounded'> viewers</p>
             </div>
             <div className='d-flex justify-content-evenly'>
               <div style={{ width: '150px', borderColor: 'rgba(233, 233, 233, 0.899)' }} className="d-flex flex-column justify-content-center align-items-center border  rounded">
                 <img width={'80px'} src={city} alt="no image" />
                 <p>CITY : </p>
-                <p className=''>NEW YORK</p>
+                <p className=''>{userDetails?.city}</p>
               </div>
               <div style={{ width: '150px', borderColor: 'rgba(233, 233, 233, 0.899)' }} className="d-flex flex-column justify-content-center align-items-center border  rounded">
                 <img width={'80px'} src={age} alt="no image" />
                 <p>AGE : </p>
-                <p className=''>00</p>
+                <p className=''>{userDetails?.age}</p>
               </div>
               <div style={{ width: '150px', borderColor: 'rgba(233, 233, 233, 0.899)' }} className="d-flex flex-column justify-content-center align-items-center border  rounded">
                 <img width={'80px'} src={height} alt="no image" />
@@ -48,7 +43,7 @@ const ProfileDetails = () => {
                 <p className=''>00</p>
               </div>
               <div style={{ width: '150px', borderColor: 'rgba(233, 233, 233, 0.899)' }} className="d-flex flex-column justify-content-center align-items-center border  rounded">
-                <img width={'80px'} src={job} alt="no image" />
+                <img width={'82px'} src={job} alt="no image" />
                 <p>JOB : </p>
                 <p className=''>XYZ</p>
               </div>
