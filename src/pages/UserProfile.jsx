@@ -4,13 +4,11 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import city from '../assets/city.png'
+import profilePic from '../assets/profilepic.png'
+import profilePic from '../assets/profilePic.png';
 import height from '../assets/auth.png'
 import job from '../assets/job.png'
 import age from '../assets/age.png'
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import addProfileImg from '../assets/profilePic.png'
-import Form from 'react-bootstrap/Form';
 import UserProfileEdit from '../components/UserProfileEdit'
 import { Link } from 'react-router-dom'
 import { deleteProfileAPI, userDetailsAPI } from '../services/allAPI'
