@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Form from 'react-bootstrap/Form';
-import adddisplayDataImg from '../assets/profilePic.png'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import addProfileImage from '../assets/profilePic.png'
+import profilePic from '../assets/profilePic.png';
 import SERVER_URL from '../services/serverURL';
 import { editProfileApi } from '../services/allAPI';
 import {editProfileResponseContext} from '../contexts/ContextAPI'
