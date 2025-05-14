@@ -133,7 +133,7 @@ const Dashboard = () => {
                 className="me-2 mb-3 w-100"
                 onClick={() => handleShow(v)}
               >
-                Here you can add or edit your profile
+                Here you can add your profile
               </Button>
             ))}
             <User />
@@ -224,7 +224,7 @@ const Dashboard = () => {
                                       <Form.Label className='m-3'>Age:</Form.Label>
                                       <Form.Control value={userDetails.age} onChange={e => setUserDetails({ ...userDetails, age: (e.target.value) })} type="text" placeholder="00" />
                                       <Form.Label className='m-3'>weight:</Form.Label>
-                                      <Form.Control value={userDetails.weight} onChange={e => setUserDetails({ ...userDetails, weight: (e.target.value) })} type="number" placeholder="Enter your height" />
+                                      <Form.Control value={userDetails.weight} onChange={e => setUserDetails({ ...userDetails, weight: (e.target.value) })} type="number" placeholder="Enter your weight" />
                                       <Form.Label className='m-3'>Mothers name:</Form.Label>
                                       <Form.Control value={userDetails.motherName} onChange={e => setUserDetails({ ...userDetails, motherName: (e.target.value) })} type="text" placeholder="Enter your mother's name" />
                                     </Form.Group>

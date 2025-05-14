@@ -5,16 +5,20 @@ import Button from 'react-bootstrap/Button';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import logoimg1 from '../assets/logo.png'
+import React, { useContext } from 'react';
+import { tokenAuthContext } from '../contexts/AuthContextAPI';
 
 
 
 
 const NavScrollExample = ({  logout })=> {
+  const{isAuthorised,setIsAuthorised} = useContext(tokenAuthContext)
   const navigate = useNavigate()
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const clearlogout = ()=>{
     sessionStorage.clear()
+    setIsAuthorised(false)
     navigate('/')
 
  

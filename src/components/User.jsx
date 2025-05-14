@@ -92,12 +92,7 @@ const User = () => {
             <Link to={'/plans'} style={{ cursor: 'pointer', textDecoration: 'none', color: 'black' }}>
               <p><i class="fa-solid fa-money-bill-1-wave px-2"></i>Plans</p>
             </Link>
-          </div>
-          <div className="mb-2 ">
-            <Link to={'/userProfileEdit'} style={{ cursor: 'pointer', textDecoration: 'none', color: 'black' }}>
-              <p><i class="fa-solid fa-gear px-2"></i>Settings</p>
-            </Link>
-          </div>
+          </div> 
           <div className="mb-2 ">
             <Link to={'/'} style={{ cursor: 'pointer', textDecoration: 'none', color: 'black' }}>
               <p onClick={logout}><i class="fa-solid fa-right-from-bracket px-2"></i>LogOut</p>

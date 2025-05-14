@@ -1,4 +1,4 @@
-import { Routes,Route } from 'react-router-dom'
+import { Routes,Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import Auth from './pages/Auth'
 import Dashboard from './pages/Dashboard'
@@ -9,15 +9,17 @@ import Plans from './components/Plans'
 import UserProfile from './pages/UserProfile'
 import UserProfileEdit from './components/UserProfileEdit'
 import Pnf from './pages/Pnf'
+import { useContext } from 'react'
+import { tokenAuthContext } from './contexts/AuthContextAPI'
 
 
 function App() {
-
+const {isAuthorised,setIsAuthorised} = useContext(tokenAuthContext)
   return (
     <>
     <Routes>
     <Route path='/' element={<Home/>}/>
-    <Route path='/dashboard' element={<Dashboard/>}/>
+    <Route path='/dashboard' element={<Dashboard/> }/>
     <Route path='/profileDetails' element={<ProfileDetails/>}/>
     <Route path='/plans' element={<Plans/>}/>    
     <Route path='/userProfileEdit' element={<UserProfileEdit/>}/>  
