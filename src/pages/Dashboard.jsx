@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import User from '../components/User'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import addProfileImg from '../assets/profilePic.png';
+import addProfileImg from '../assets/profilepic.png'
 import Form from 'react-bootstrap/Form';
 import { addProfileAPI, allProfilesAPI } from '../services/allAPI';
 import SERVER_URL from '../services/serverURL';
