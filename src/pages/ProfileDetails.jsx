@@ -8,7 +8,6 @@ import height from '../assets/height.png'
 import job from '../assets/job.png'
 import age from '../assets/age.png'
 import othersProfile from '../assets/othersprofile.png'
-import { useLocation } from 'react-router-dom';
 
 
 const ProfileDetails = () => {
