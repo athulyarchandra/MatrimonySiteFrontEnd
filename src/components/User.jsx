@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import addProfileImg from '../assets/profilepic.png'
+import addProfileImg from '../assets/picProfile.png'
 import SERVER_URL from '../services/serverURL'
 import { userProfileUpdatingAPI } from '../services/allAPI'
 

@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import city from '../assets/city.png'
-import profilePic from '../assets/profilepic.png'
+import profilePic from '../assets/picProfile.png'
 import height from '../assets/auth.png'
 import job from '../assets/job.png'
 import age from '../assets/age.png'

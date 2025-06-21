@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import cityImg from '../assets/city.png'
 import height from '../assets/height.png'
-import profilePic from '../assets/profilePic.png';
+import profilePic from '../assets/picProfile.png'
 import job from '../assets/job.png'
 import ageImg from '../assets/age.png'
 import Button from 'react-bootstrap/Button';

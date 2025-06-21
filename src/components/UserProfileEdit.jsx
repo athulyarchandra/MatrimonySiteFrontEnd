@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import profilePic from '../assets/profilePic.png';
+import profilePic from '../assets/picProfile.png';
 import SERVER_URL from '../services/serverURL';
 import { editProfileApi } from '../services/allAPI';
 import {editProfileResponseContext} from '../contexts/ContextAPI'

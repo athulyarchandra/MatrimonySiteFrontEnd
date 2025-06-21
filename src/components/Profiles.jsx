@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import { Link, useNavigate } from 'react-router-dom';
-import profilePic from '../assets/profilePic.png';
+import profilePic from '../assets/picProfile.png';
 import SERVER_URL from '../services/serverURL';
 
 const Profiles = ({displayData}) => {
