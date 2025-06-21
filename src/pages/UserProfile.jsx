@@ -49,8 +49,12 @@ const UserProfile = () => {
                 "Authorization": `Bearer ${token}`
               }
               try {
-                await deleteProfileAPI(id,reqHeader)
+                if(confirm("This profile will deleted permanently")){
+                    await deleteProfileAPI(id,reqHeader)
                 getUserDetails()
+                }else{
+                    getUserDetails()
+                }
               } catch (err) {
                 console.log(err);
                 
